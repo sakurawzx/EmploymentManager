@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>登录</title>
+
+  <!--Semantic-UI CSS-->
+  <link rel="stylesheet" href="../static/lib/semantic/semantic.min.css" th:href="@{/lib/semantic/semantic.min.css}">
+  <!-- MDUI CSS -->
+  <link rel="stylesheet" href="../static/lib/mdui/css/mdui.min.css" th:href="@{/lib/mdui/css/mdui.min.css}">
+  <!--自定义 CSS-->
+  <link rel="stylesheet" href="../static/css/login.css" th:href="@{/css/login.css}">
+</head>
+
+<body class="back">
+<div class="mdui-container" style="height: 100%">
+  <div class="mdui-card login-wrapper mdui-col-xs-12 mdui-col-sm-8 mdui-col-offset-sm-2 mdui-col-md-6 mdui-col-offset-md-3">
+    <div class="mdui-container">
+      <p class="login-title">Login</p>
+    </div>
+
+    <div class="mdui-container" style="margin-top: -3em">
+      <!--输入框-->
+      <div class="mdui-textfield mdui-textfield-floating-label">
+        <label class="mdui-textfield-label">用户名</label>
+        <input class="mdui-textfield-input" type="text" required/>
+        <div class="mdui-textfield-error">用户名不能为空</div>
+      </div>
+      <div class="mdui-textfield mdui-textfield-floating-label">
+        <label class="mdui-textfield-label">密码</label>
+        <input class="mdui-textfield-input" type="password" pattern="^(?=.*[a-zA-Z])(?=.*\d).{6,18}$" required/>
+        <div class="mdui-textfield-error">密码至少6位，最多18位，且同时包含字母和数字</div>
+        <div class="mdui-textfield-helper">请输入6至18位，且包含数字和的密码</div>
+      </div>
+
+      <!--登录按钮-->
+      <button class="mdui-btn mdui-ripple mdui-btn-block mdui-text-color-white login-btn" id="login">登录</button>
+
+      <!--注册-->
+      <div class="msg">没有账号？
+        <a href="register.html" th:href="@{/register}">注册一个</a> ！
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Semantic-UI JavaScript-->
+<script src="../static/lib/semantic/semantic.min.js" th:src="@{/lib/semantic/semantic.min.jss}"></script>
+<!-- MDUI JavaScript -->
+<script src="../static/lib/mdui/js/mdui.min.js" th:src="@{/lib/mdui/js/mdui.min.js}"></script>
+</body>
+
+</html>
