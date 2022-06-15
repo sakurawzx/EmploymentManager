@@ -8,7 +8,7 @@
   <title>注册</title>
 
   <!--Semantic-UI CSS-->
-  <link rel="stylesheet" href="../static/lib/semantic/semantic.min.css" th:href="@{/lib/semantic/semantic.min.css}">
+  <link href="../static/lib/semantic/semantic.min.css" rel="stylesheet" th:href="@{/lib/semantic/semantic.min.css}">
   <!-- MDUI CSS -->
   <link href="../static/lib/mdui/css/mdui.min.css" rel="stylesheet" th:href="@{/lib/mdui/css/mdui.min.css}">
   <!--自定义 CSS-->
@@ -17,57 +17,64 @@
 
 <body class="back">
 <div class="mdui-container" style="height: 100%">
-  <div
-      class="mdui-card login-wrapper mdui-col-xs-12 mdui-col-sm-8 mdui-col-offset-sm-2 mdui-col-md-6 mdui-col-offset-md-3">
+  <div class="mdui-card login-wrapper  mdui-col-xs-12 mdui-col-sm-8 mdui-col-offset-sm-2 mdui-col-md-6 mdui-col-offset-md-3">
     <div class="mdui-container">
-      <p class="login-title">Register</p>
-    </div>
-
-    <div class="mdui-container" style="margin-top: -3em">
-      <!--邮箱-->
-      <div class="mdui-textfield mdui-textfield-floating-label login-input">
-        <label class="mdui-textfield-label">邮箱</label>
-        <input class="mdui-textfield-input" id="email" required type="email"/>
-        <div class="mdui-textfield-error">邮箱格式错误</div>
-      </div>
-      <!--用户名-->
-      <div class="mdui-textfield mdui-textfield-floating-label login-input">
-        <label class="mdui-textfield-label">用户名</label>
-        <input class="mdui-textfield-input" id="username" required type="text"/>
-        <div class="mdui-textfield-error">用户名不能为空</div>
-      </div>
-      <!--密码-->
-      <div class="mdui-textfield mdui-textfield-floating-label login-input">
-        <label class="mdui-textfield-label">密码</label>
-        <input class="mdui-textfield-input" id="password"
-               pattern="^(?=.*[a-zA-Z])(?=.*\d).{6,18}$" required type="password"/>
-        <div class="mdui-textfield-error">密码至少6位，最多18位，且同时包含字母和数字</div>
-        <div class="mdui-textfield-helper">请输入6至18位，且包含数字和的密码</div>
-      </div>
-      <!--确认密码-->
-      <div class="mdui-textfield mdui-textfield-floating-label login-input" id="confirm-form">
-        <label class="mdui-textfield-label">确认密码</label>
-        <input class="mdui-textfield-input" id="confirm-input"
-               pattern="^(?=.*[a-zA-Z])(?=.*\d).{6,18}$" required type="password">
-        <div class="mdui-textfield-error" id="error">密码至少6位，最多18位，且同时包含字母和数字</div>
-        <div class="mdui-textfield-helper">请再次输入密码</div>
+      <div class="mdui-container">
+        <p class="login-title">注册新用户</p>
       </div>
 
-      <!--登录按钮-->
-      <button class="mdui-btn mdui-ripple mdui-btn-block mdui-text-color-white login-btn" id="register">注册</button>
+      <div class="mdui-container" style="margin-top: -3em">
+        <!--邮箱-->
+        <div>
+          <div class="mdui-textfield mdui-textfield-floating-label login-input">
+            <label class="mdui-textfield-label">邮箱</label>
+            <input class="mdui-textfield-input" id="email" required type="email"/>
+            <div class="mdui-textfield-error">邮箱格式错误</div>
+          </div>
+          <select class="mdui-select" mdui-select style="float: right;margin-top: 4%">
+            <option value="1">学生</option>
+            <option value="2">企业</option>
+          </select>
+        </div>
+        <!--用户名-->
+        <div class="mdui-textfield mdui-textfield-floating-label login-input">
+          <label class="mdui-textfield-label">用户名</label>
+          <input class="mdui-textfield-input" id="username" required type="text"/>
+          <div class="mdui-textfield-error">用户名不能为空</div>
+        </div>
+        <!--密码-->
+        <div class="mdui-textfield mdui-textfield-floating-label login-input">
+          <label class="mdui-textfield-label">密码</label>
+          <input class="mdui-textfield-input" id="password"
+                 pattern="^(?=.*[a-zA-Z])(?=.*\d).{6,18}$" required type="password"/>
+          <div class="mdui-textfield-error">密码至少6位，最多18位，且同时包含字母和数字</div>
+          <div class="mdui-textfield-helper">请输入6至18位，且包含数字和字母的密码</div>
+        </div>
+        <!--确认密码-->
+        <div class="mdui-textfield mdui-textfield-floating-label login-input" id="confirm-form">
+          <label class="mdui-textfield-label">确认密码</label>
+          <input class="mdui-textfield-input" id="confirm-input"
+                 pattern="^(?=.*[a-zA-Z])(?=.*\d).{6,18}$" required type="password">
+          <div class="mdui-textfield-error" id="error">密码至少6位，最多18位，且同时包含字母和数字</div>
+          <div class="mdui-textfield-helper">请再次输入密码</div>
+        </div>
 
-      <!--注册-->
-      <div class="msg">已有账号？
-        <a href="login.html" th:href="@{/}">去登录</a> ！
+        <!--注册按钮-->
+        <button class="mdui-btn mdui-ripple mdui-btn-block mdui-text-color-white login-btn" id="register">
+          注 &nbsp;&nbsp;&nbsp; 册
+        </button>
+
+        <!--注册-->
+        <div class="msg">已有账号？
+          <a href="login.html" th:href="@{/login}">去登录</a> ！
+        </div>
       </div>
     </div>
   </div>
 </div>
 
 <!--JQuery-->
-<script crossorigin="anonymous"
-        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-        referrerpolicy="no-referrer" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="../static/lib/jquery/jquery.min.js" th:src="@{/lib/jquery/jquery.min.js}"></script>
 <!-- MDUI JavaScript -->
 <script src="../static/lib/mdui/js/mdui.min.js" th:src="@{/lib/mdui/js/mdui.min.js}"></script>
 <!--Semantic-UI JavaScript-->
@@ -100,6 +107,23 @@
             $textfield.removeClass('mdui-textfield-invalid');
         }
     });
+    $('#password').on('input', function () {
+        var value = $input.val();
+        var password = $('#password').val();
+
+        if (value.length === 0 || password.length === 0) {
+            $error.removeClass('mdui-textfield-invalid');
+        } else if (!(value === password)) {
+            $error.text('密码不一致');
+            $textfield.addClass('mdui-textfield-invalid');
+        } else if (!regex.test(value)) {
+            $error.text('密码至少6位，最多18位，且同时包含字母和数字');
+            $textfield.addClass('mdui-textfield-invalid');
+        } else {
+            hasError = false;
+            $textfield.removeClass('mdui-textfield-invalid');
+        }
+    });
     $input.on('blur', function () {
         var value = $input.val();
         var password = $('#password').val();
@@ -118,29 +142,12 @@
             $textfield.removeClass('mdui-textfield-invalid');
         }
     });
-    $('#password').on('input', function () {
-        var value = $input.val();
-        var password = $('#password').val();
-
-        if (value.length === 0 || password.length === 0) {
-            $error.removeClass('mdui-textfield-invalid');
-        } else if (!(value === password)) {
-            $error.text('密码不一致');
-            $textfield.addClass('mdui-textfield-invalid');
-        } else if (!regex.test(value)) {
-            $error.text('密码至少6位，最多18位，且同时包含字母和数字');
-            $textfield.addClass('mdui-textfield-invalid');
-        } else {
-            hasError = false;
-            $textfield.removeClass('mdui-textfield-invalid');
-        }
-    });
 
     $('#register').on('click', function () {
-        if (!hasError) {
-            alert("注册成功！");
+        if (hasError) {
+            alert("表单填写错误");
         } else {
-            alert("表单填写错误")
+            alert("注册成功！");
         }
     })
 </script>

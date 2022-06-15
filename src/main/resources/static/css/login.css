@@ -10,12 +10,14 @@ a {
 
 .login-wrapper {
     border-radius: 25px;
-    margin-top: 4em;
+    top: 50%;
+    transform: translate(0,-50%);
 }
 
 .login-title {
+    color: #55acee;
     font-weight: 500;
-    font-size: 45px;
+    font-size: 40px;
     text-align: center;
     line-height: 3em
 }
@@ -37,4 +39,15 @@ a {
     text-align: center;
     line-height: 30px;
     font-weight: 400;
+}
+
+/*
+    翻转特效
+ */
+.card-front {
+
+}
+
+.card-back {
+    display: none;
 }
